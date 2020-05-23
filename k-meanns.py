@@ -86,17 +86,28 @@ plt.show()
 pktw=tworzenie(x,y)
 sr=tworzenie(xr,yr)
 el=kmeans(sr,pktw)
-el=kmeans(el[1],el[0])
-for i in range(len(el)):
+for i in range(8):
+    el=kmeans(el[1],el[0])
+fx=[[],[],[]]
+fy=[[],[],[]]
+for i in range(len(el[0])):
     print(el[0][i])
     print(el[0][i].getCentroid())
+    r=el[0][i].getCentroid()
+    fx[r].append(el[0][i].getX())
+    fy[r].append(el[0][i].getY())
+    #plt.plot(el[0][i].getX(),el[0][i].getY(),'o'+kolory[r])
 xr=[]
 yr=[]
 for i in range(len(el[1])):
     xr.append(el[1][i].getX())
     yr.append(el[1][i].getY())
+print(fx[0])
 plt.plot(xr,yr,'x')
-plt.plot(x,y,'o')
+
+plt.scatter(fx[0],fy[0],color='red')
+plt.scatter(fx[1],fy[1],color='blue')
+plt.scatter(fx[2],fy[2],color='green')
 plt.show()
 print("koniec")
 
