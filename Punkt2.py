@@ -16,7 +16,7 @@ class Punkt2:
         :param polar: jeżeli polar == False (domyślnie), to c1,c2 == x,y, w przeciwnym przypadku c1,c2 == r,phi
         '''
 
-        print ("Wywołanie konstruktora: ", c1, ",", c2)
+        #print ("Wywołanie konstruktora: ", c1, ",", c2)
         if not polar:
             self.__x = c1
             self.__y = c2
@@ -25,7 +25,7 @@ class Punkt2:
           self.__y = c1 * math.sin(c2)
         self.cen=-1
         Punkt2.licznik += 1
-        print("licznik = ", Punkt2.licznik)
+        #print("licznik = ", Punkt2.licznik)
 
 
     def __del__(self):
@@ -35,9 +35,9 @@ class Punkt2:
         :return: None
         '''
 
-        print("Wywołanie destruktora: ", self.__x, ",", self.__y)
+        #print("Wywołanie destruktora: ", self.__x, ",", self.__y)
         Punkt2.licznik -= 1;
-        print("licznik = ", Punkt2.licznik)
+        #print("licznik = ", Punkt2.licznik)
 
 
     def setX(self,x):
